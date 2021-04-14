@@ -1,6 +1,20 @@
 from turtle import *
 
 
+def main():
+    fractal = input('''Введите цифру, соответсвующую одному из перечисленных ниже фракталов:
+    1   "Убегающий" квадрат
+    2   Двоичное дерево
+    3   Фрактал "Ветка"
+    4   Кривая Коха
+    5   Снежинка Коха
+    6   Кривая Минковского
+    7   "Ледяной" фрактал (первый вариант)
+    8   "Ледяной" фрактал (второй вариант)
+    9   Кривая Леви
+    10  Фрактал Дракон Хартера-Хейтуэя''')
+
+
 def square(a):
     if a<0:
         return
@@ -13,7 +27,6 @@ def square(a):
     pendown()
     square(a - 5)
 
-#square(100)
 
 def tree(n,angle):
     if n==0:
@@ -29,6 +42,8 @@ def tree(n,angle):
     forward(-20)
     left(angle)
     forward(-50)
+
+
 def main_tree():
     up()
     goto(0,-100)
@@ -37,6 +52,7 @@ def main_tree():
     n = int(input('Глубина рекурсии:'))
     a = int(input('Угол отклонения ветки:'))
     branch(n,a)
+
 
 def branch(n, size):
     if n == 0:
@@ -55,6 +71,7 @@ def branch(n, size):
     left(180)
     forward(size)
 
+
 def main_branch():
     up()
     goto(0,-100)
@@ -63,6 +80,27 @@ def main_branch():
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
     branch(n,a)
+
+
+def koch_main():
+    up()
+    goto(-100,0)
+    down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    koch(n, a)
+
+
+def star_koch():
+    up()
+    goto(-100, 0)
+    down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    for i in range(3):
+        koch(n, a)
+        right(120)
+
 
 def koch(order, size):
     if order == 0:
@@ -76,23 +114,6 @@ def koch(order, size):
         left(60)
         koch(order-1, size/3)
 
-def koch_main():
-    up()
-    goto(-100,0)
-    down()
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    koch(n, a)
-
-def star_koch():
-    up()
-    goto(-100, 0)
-    down()
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    for i in range(3):
-        koch(n, a)
-        right(120)
 
 def freeze_fract(n, a):
     down()
@@ -106,3 +127,53 @@ def freeze_fract(n, a):
         right(90)
         freeze_fract(n - 1, a / 2)
         up()
+
+
+def levi(order, size):
+    if order == 0:
+        forward(size)
+    else:
+        left(45)
+        levi(order-1, size/(2**0.5))
+        right(90)
+        levi(order-1, size/(2**0.5))
+        left(45)
+
+
+def levi_main():
+    speed(10)
+    up()
+    goto(-100, 0)
+    down()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    levi(n, a)
+    done()
+
+
+def freeze_fract_second(order, size):
+    if order == 0:
+        forward(size)
+    else:
+        freeze_fract_second(order - 1, size)
+        left(120)
+        freeze_fract_second(order - 1, size/2)
+        left(180)
+        freeze_fract_second(order - 1, size/2)
+        left(120)
+        freeze_fract_second(order - 1, size/2)
+        left(180)
+        freeze_fract_second(order - 1, size/2)
+        left(120)
+        freeze_fract_second(order - 1, size)
+
+
+def freeze_fract_second_main():
+    up()
+    goto(-500, 0)
+    down()
+    speed(10)
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    freeze_fract_second(n, a)
+    done()
