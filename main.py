@@ -29,7 +29,7 @@ def tree(n,angle):
     forward(-20)
     left(angle)
     forward(-50)
-def main_tree()
+def main_tree():
     up()
     goto(0,-100)
     left(90)
@@ -55,7 +55,7 @@ def branch(n, size):
     left(180)
     forward(size)
 
-def main_branch()
+def main_branch():
     up()
     goto(0,-100)
     left(90)
