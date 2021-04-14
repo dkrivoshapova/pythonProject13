@@ -62,7 +62,7 @@ def main_branch():
     down()
     n = int(input('Глубина рекурсии:'))
     a = int(input('Длина стороны:'))
-    branch(n,a)
+
 
 def koch(order, size):
     if order == 0:
@@ -75,6 +75,7 @@ def koch(order, size):
         koch(order-1, size/3)
         left(60)
         koch(order-1, size/3)
+#print(koch(2,100))
 
 def koch_main():
     up()
@@ -93,3 +94,29 @@ def star_koch():
     for i in range(3):
         koch(n, a)
         right(120)
+
+
+def freeze_fract(n, a):
+    down()
+    if n == 0:
+        forward(a)
+    else:
+        freeze_fract(n-1,a/2)
+        left(90)
+        freeze_fract(n - 1, a / 4)
+        freeze_fract(n - 1, -a / 4)
+        right(90)
+        freeze_fract(n - 1, a / 2)
+        up()
+print(freeze_fract(3, 500))
+
+def dragon(n):
+    down()
+    if n == 1:
+        forward(60)
+        left(90)
+        return
+    dragon(n-1)
+    forward(60)
+    left(90)
+#print(dragon(3))
