@@ -225,4 +225,4 @@ def dragon(n,a):
     left(90)
     dragon_reverse(n - 1, a)
 
-
+print(dragon(6,100))
