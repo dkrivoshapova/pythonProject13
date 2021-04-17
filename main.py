@@ -149,3 +149,6 @@ def dragon(n,a):
 print(dragon(4,60))
 #print(dragon_reverse(1,60))
 exitonclick()
+
+
+def numbers(x):
