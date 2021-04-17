@@ -177,3 +177,22 @@ def freeze_fract_second_main():
     a = int(input('Длина стороны:'))
     freeze_fract_second(n, a)
     done()
+
+def dragon_reverse(n,a):
+    down()
+    if n == 0:
+        forward(a)
+        return
+    dragon(n-1, a)
+    right(90)
+    dragon_reverse(n - 1, a)
+
+def dragon(n,a):
+    down()
+    if n == 0:
+        forward(a)
+        return
+    dragon(n-1, a)
+    left(90)
+    dragon_reverse(n - 1, a)
+print(dragon(4,60))
