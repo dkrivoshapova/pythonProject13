@@ -14,7 +14,7 @@ def main():
     9   Кривая Леви
     10  Фрактал Дракон Хартера-Хейтуэя''')
 
-
+#"Убегающий" квадрат
 def square(a):
     if a<0:
         return
@@ -27,7 +27,7 @@ def square(a):
     pendown()
     square(a - 5)
 
-
+#Двоичное дерево
 def tree(n,angle):
     if n==0:
         return
@@ -53,7 +53,7 @@ def main_tree():
     a = int(input('Угол отклонения ветки:'))
     branch(n,a)
 
-
+#Фрактал "Ветка"
 def branch(n, size):
     if n == 0:
         left(180)
@@ -81,7 +81,7 @@ def main_branch():
     a = int(input('Длина стороны:'))
     branch(n,a)
 
-
+#Кривая Коха
 def koch_main():
     up()
     goto(-100,0)
@@ -90,7 +90,7 @@ def koch_main():
     a = int(input('Длина стороны:'))
     koch(n, a)
 
-
+#Снежинка Коха
 def star_koch():
     up()
     goto(-100, 0)
@@ -114,7 +114,7 @@ def koch(order, size):
         left(60)
         koch(order-1, size/3)
 
-
+#"Ледяной" фрактал (первый вариант)
 def freeze_fract(n, a):
     down()
     if n == 0:
@@ -128,7 +128,7 @@ def freeze_fract(n, a):
         freeze_fract(n - 1, a / 2)
         up()
 
-
+#Кривая Леви
 def levi(order, size):
     if order == 0:
         forward(size)
@@ -167,7 +167,7 @@ def freeze_fract_second(order, size):
         left(120)
         freeze_fract_second(order - 1, size)
 
-
+#"Ледяной" фрактал (второй вариант)
 def freeze_fract_second_main():
     up()
     goto(-500, 0)
@@ -187,6 +187,7 @@ def dragon_reverse(n,a):
     right(90)
     dragon_reverse(n - 1, a)
 
+#Фрактал Дракон Хартера-Хейтуэя
 def dragon(n,a):
     down()
     if n == 0:
@@ -195,4 +196,5 @@ def dragon(n,a):
     dragon(n-1, a)
     left(90)
     dragon_reverse(n - 1, a)
-print(dragon(4,60))
+
+print(koch(4,500))
