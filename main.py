@@ -106,3 +106,22 @@ def freeze_fract(n, a):
         right(90)
         freeze_fract(n - 1, a / 2)
         up()
+
+def dragon_reverse(n,a):
+    down()
+    if n == 0:
+        forward(a)
+        return
+    dragon(n-1, a)
+    right(90)
+    dragon_reverse(n - 1, a)
+
+def dragon(n,a):
+    down()
+    if n == 0:
+        forward(a)
+        return
+    dragon(n-1, a)
+    left(90)
+    dragon_reverse(n - 1, a)
+
