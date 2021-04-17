@@ -114,6 +114,34 @@ def koch(order, size):
         left(60)
         koch(order-1, size/3)
 
+
+#Кривая Минковского
+def minkovskiy(n,a):
+    if n == 0:
+        forward(a)
+    if n < 0:
+        return
+    minkovskiy(n-1,a)
+    left(90)
+    minkovskiy(n - 1, a)
+    right(90)
+    minkovskiy(n - 1, a)
+    right(90)
+    minkovskiy(n - 1, a)
+    minkovskiy(n - 1, a)
+    left(90)
+    minkovskiy(n - 1, a)
+    left(90)
+    minkovskiy(n - 1, a)
+    right(90)
+up()
+goto(-300,0)
+down()
+minkovskiy(5,20)
+done
+
+
+
 #"Ледяной" фрактал (первый вариант)
 def freeze_fract(n, a):
     down()
@@ -197,4 +225,4 @@ def dragon(n,a):
     left(90)
     dragon_reverse(n - 1, a)
 
-print(koch(4,500))
+
