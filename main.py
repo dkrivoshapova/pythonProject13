@@ -146,9 +146,58 @@ def dragon(n,a):
     dragon(n-1, a)
     left(90)
     dragon_reverse(n - 1, a)
-print(dragon(4,60))
+
 #print(dragon_reverse(1,60))
-exitonclick()
+#exitonclick()
+
+
 
 
 def numbers(x):
+    if x // 10 == 0:
+        return x
+    print(x%10)
+    return numbers(x//10)
+
+def destobin(x):
+    if x < 2:
+        return str(x)
+    return destobin(x // 2) + str(x % 2)
+
+
+def deston(x,n):
+    if x < n:
+        return str(x)
+    return deston(x // n, n) + str(x % n)
+
+def function1(x):
+    d = 2
+    while True:
+        if x == d:
+            return 1
+        elif x % d ==0:
+            return 0
+        d += 1
+
+
+def pifagor_tree(a,n):
+    if n == 0:
+        return quad(a)
+    quad(a)
+    up()
+    left(90)
+    forward(a)
+    right(45)
+    down()
+    pifagor_tree((a**2/2)**0.5, n-1)
+    home()
+    pifagor_tree((a**2/2)**0.5, n - 1)
+
+def quad(a):
+    for i in range(0,4):
+        forward(a)
+        left(90)
+
+
+
+exitonclick()
