@@ -1,5 +1,5 @@
 """
-Case-study 8: recursive functions
+Case-study 8: recursive functions (fractals)
 Developers:
 Кривошапова Д. Е.:
 Кузнецов А. Д.:
