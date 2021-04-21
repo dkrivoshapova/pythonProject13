@@ -1,7 +1,7 @@
 """
 Case-study 8: recursive functions (fractals)
 Developers:
-Кривошапова Д. Е.:
+Кривошапова Д. Е.:20%
 Кузнецов А. Д.:
 Лапочкин Д. А.: 25%
 """
