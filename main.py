@@ -2,7 +2,7 @@
 Case-study 8: recursive functions (fractals)
 Developers:
 Кривошапова Д. Е.:20%
-Кузнецов А. Д.:
+Кузнецов А. Д.: 15%
 Лапочкин Д. А.: 25%
 """
 from turtle import *
